@@ -1,0 +1,44 @@
+/*
+  Warnings:
+
+  - You are about to drop the `banana` table. If the table is not empty, all the data it contains will be lost.
+  - Added the required column `password` to the `user` table without a default value. This is not possible if the table is not empty.
+
+*/
+-- AlterTable
+ALTER TABLE `user` ADD COLUMN `password` VARCHAR(191) NOT NULL;
+
+-- DropTable
+DROP TABLE `banana`;
+
+-- CreateTable
+CREATE TABLE `teknisa` (
+    `id` INTEGER NOT NULL AUTO_INCREMENT,
+    `createdAt` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
+    `updatedAt` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
+    `NRORDPROD` VARCHAR(191) NOT NULL,
+    `CODFICHA` VARCHAR(191) NOT NULL,
+    `CODCMFICHA` VARCHAR(191) NULL,
+    `NOMEFICHA` VARCHAR(191) NULL,
+    `UNIDMEDFICHA` VARCHAR(191) NULL,
+    `DATAGERACAOOP` DATETIME(3) NOT NULL,
+    `DATAINICIO` DATETIME(3) NULL,
+    `DATAFINAL` DATETIME(3) NULL,
+    `QTDPLANEJADA` DOUBLE NOT NULL,
+    `RENDIMENTO` DOUBLE NULL,
+    `NRRETEST` VARCHAR(191) NULL,
+    `NRLANCESTQ` VARCHAR(191) NULL,
+    `CDSETOR` VARCHAR(191) NULL,
+    `CDCENTCUST` VARCHAR(191) NULL,
+    `NRSEQRETPROD` VARCHAR(191) NULL,
+    `CODITEM` VARCHAR(191) NULL,
+    `INSUMO` VARCHAR(191) NULL,
+    `CODCM` VARCHAR(191) NULL,
+    `UNIDMED` VARCHAR(191) NULL,
+    `VRPESOUNID` DOUBLE NULL,
+    `PRODSUBSTITUIDO` VARCHAR(191) NULL,
+    `QTDPREVISTA` DOUBLE NULL,
+    `DSLANCESTIT` VARCHAR(191) NULL,
+
+    PRIMARY KEY (`id`)
+) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
