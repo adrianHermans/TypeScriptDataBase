@@ -1,0 +1,54 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+
+model user{
+  id Int @id @default(autoincrement())
+  name String 
+  email String @unique 
+  password String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now())
+}
+
+
+model banana{
+  id Int @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now())
+  NRORDPROD String
+  CODFICHA String
+  CODCMFICHA String?
+  NOMEFICHA String?
+  UNIDMEDFICHA String?
+  DATAGERACAOOP DateTime
+  DATAINICIO DateTime?
+  DATAFINAL DateTime?
+  QTDPLANEJADA Float
+  RENDIMENTO Float?
+  NRRETEST String?
+  NRLANCESTQ String?
+  CDSETOR String?
+  CDCENTCUST String?
+  NRSEQRETPROD String?
+  CODITEM String?
+  INSUMO String?
+  CODCM String?
+  UNIDMED String?
+  VRPESOUNID Float?
+  PRODSUBSTITUIDO String?
+  QTDPREVISTA Float?
+  DSLANCESTIT String?
+
+  @@map("teknisa")
+  
+}

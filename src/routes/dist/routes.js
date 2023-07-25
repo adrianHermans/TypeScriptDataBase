@@ -1,0 +1,15 @@
+"use strict";
+exports.__esModule = true;
+exports.routes = void 0;
+var listUsersController_1 = require("./../modules/users/controllers/listUsersController");
+var createUsersController_1 = require("./../modules/users/controllers/createUsersController");
+var authenticateController_1 = require("./../modules/authenticate/controllers/authenticateController");
+var express_1 = require("express");
+var routes = express_1.Router();
+exports.routes = routes;
+var ListUsersController = new listUsersController_1.listUsersController();
+var CreateUserController = new createUsersController_1.createUsersController();
+var AuthenticateController = new authenticateController_1.authenticateController();
+routes.get("/user", ListUsersController.handle);
+routes.post("/user", CreateUserController.handle);
+routes.post('/login', AuthenticateController.handle);
